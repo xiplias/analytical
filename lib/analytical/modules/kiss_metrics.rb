@@ -5,7 +5,8 @@ module Analytical
 
       def initialize(options={})
         super
-        #check_js_url_key
+        @tracking_command_location = :body_append
+        check_js_url_key
       end
 
       def init_javascript(location)
