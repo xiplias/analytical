@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'pry'
 
 ENV["RAILS_ENV"] ||= 'test'
 
