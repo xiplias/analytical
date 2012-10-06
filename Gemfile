@@ -15,4 +15,5 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'growl'
+  gem "pry"
 end
