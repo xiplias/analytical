@@ -5,7 +5,7 @@ module Analytical
 
       def initialize(options={})
         super
-        check_js_url_key
+        #check_js_url_key
       end
 
       def init_javascript(location)
@@ -44,6 +44,10 @@ module Analytical
 
       def alias_identity(old_identity, new_identity)
         "_kmq.push([\"alias\", \"#{old_identity}\", \"#{new_identity}\"]);"
+      end
+
+      def track_click(selector, key)
+        "_kmq.push([\"trackClick\", \"#{selector}\", \"#{key}\"]);"
       end
 
     private

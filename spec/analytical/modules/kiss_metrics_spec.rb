@@ -38,6 +38,12 @@ describe "Analytical::Modules::KissMetrics" do
       @api.alias_identity('foo', 'bar').should == "_kmq.push([\"alias\", \"foo\", \"bar\"]);"
     end
   end
+  describe '#track_click' do
+    it 'should return a js string' do
+      @api = Analytical::Modules::KissMetrics.new :parent=>@parent, :js_url_key=>'abcdef'
+      @api.track_click('#foo', 'bar').should == "_kmq.push([\"trackClick\", \"#foo\", \"bar\"]);"
+    end
+  end
   describe '#init_javascript' do
     it 'should return the init javascript' do
       @api = Analytical::Modules::KissMetrics.new :parent=>@parent, :js_url_key=>'abcdef'
